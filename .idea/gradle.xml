@@ -14,7 +14,10 @@
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/data" />
             <option value="$PROJECT_DIR$/domain" />
-            <option value="$PROJECT_DIR$/features_cityinput" />
+            <option value="$PROJECT_DIR$/features" />
+            <option value="$PROJECT_DIR$/features/cityinput" />
+            <option value="$PROJECT_DIR$/features/currentweather" />
+            <option value="$PROJECT_DIR$/features/forecast" />
             <option value="$PROJECT_DIR$/weather-utils" />
           </set>
         </option>

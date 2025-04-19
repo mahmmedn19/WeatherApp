@@ -2,6 +2,10 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.hiltAndroid)
+    alias(libs.plugins.ksp)
+    id("kotlin-parcelize")
+    id("org.jetbrains.kotlin.plugin.serialization") version "2.1.10"
 }
 
 android {
@@ -28,11 +32,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
@@ -55,7 +59,29 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
+    implementation(libs.composeMaterial3)
+    implementation(libs.navigationCompose)
+    implementation(libs.composeUi)
+    implementation(libs.coil)
+    implementation(libs.coilCompose)
+    implementation(libs.coilGif)
+    implementation(libs.splashscreen)
+    implementation(libs.androidx.appcompat)
+
+
+    implementation(libs.daggerHiltAndroid)
+    ksp(libs.daggerHiltCompiler)
+    implementation(libs.hiltNavigationCompose)
+
+    // Coroutines
+    implementation(libs.coroutines)
+    implementation(libs.coroutinesCore)
+    implementation(libs.coroutinesTest)
+
+    //acompanist permissions
+    implementation(libs.accompanistPermissions)
+
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

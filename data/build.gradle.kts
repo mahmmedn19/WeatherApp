@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.hiltAndroid)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -21,11 +23,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
 }
 
@@ -33,9 +35,29 @@ dependencies {
     implementation(project(":core"))
     implementation(project(":domain"))
 
+    implementation(libs.coroutinesCore)
+    implementation(libs.coroutines)
+
+    implementation(libs.retrofit)
+    implementation(libs.retrofitConverterGson)
+    implementation(libs.retrofitConverterMoshi)
+    implementation(libs.retrofitConverterScalars)
+    implementation(libs.okhttpLoggingInterceptor)
+
+    implementation(libs.moshi)
+    implementation(libs.moshiKotlin)
+    implementation(libs.moshiAdapters)
+    ksp(libs.moshiKotlinCodegen)
+
+    implementation(libs.roomRuntime)
+    implementation(libs.roomKtx)
+    ksp(libs.roomCompiler)
+
+    implementation(libs.daggerHiltAndroid)
+    ksp(libs.daggerHiltCompiler)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
