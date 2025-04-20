@@ -1,6 +1,3 @@
-/**
- * @author Mohamed Naser.
- */
 package com.project.features_cityinput
 
 import androidx.compose.runtime.Composable
@@ -17,7 +14,7 @@ import com.project.features_cityinput.component.CityTextField
 @Composable
 fun CityInputScreen(
     onCitySubmitted: (String) -> Unit,
-    viewModel: CityInputViewModel = hiltViewModel()
+    viewModel: CityInputViewModel
 ) {
     val state by viewModel.state.collectAsState()
 

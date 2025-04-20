@@ -1,6 +1,3 @@
-/**
- * @author Mohamed Naser.
- */
 package com.project.currentweather
 
 import androidx.compose.foundation.*
@@ -23,7 +20,8 @@ import com.project.weather_utils.getWeatherIconUrl
 @Composable
 fun CurrentWeatherScreen(
     city: String,
-    viewModel: CurrentWeatherViewModel = hiltViewModel()
+    onShowForecast: (city: String) -> Unit,
+    viewModel: CurrentWeatherViewModel
 ) {
     val state by viewModel.state.collectAsState()
 
@@ -47,7 +45,10 @@ fun CurrentWeatherScreen(
                 .verticalScroll(rememberScrollState())
                 .padding(16.dp)
         ) {
-            CurrentWeatherContent(state = state)
+            CurrentWeatherContent(
+                state = state,
+                onShowForecast =  { onShowForecast(city) }
+            )
         }
 
         PullRefreshIndicator(
@@ -59,7 +60,10 @@ fun CurrentWeatherScreen(
 }
 
 @Composable
-fun CurrentWeatherContent(state: CurrentWeatherState) {
+fun CurrentWeatherContent(
+    state: CurrentWeatherState,
+    onShowForecast: () -> Unit
+) {
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
         when {
             state.isLoading -> {
@@ -99,5 +103,25 @@ fun CurrentWeatherContent(state: CurrentWeatherState) {
                 }
             }
         }
+    }
+
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(16.dp)
+    ) {
+        Text(text = "Wind Speed: ${state.weather?.windSpeed} m/s")
+        Text(text = "Humidity: ${state.weather?.humidity}%")
+        Text(text = "Feels Like: ${state.weather?.feelsLike?.let { TemperatureFormatter.formatFromKelvin(it) }}")
+        Text(text = "Sunrise: ${state.weather?.sunrise}")
+        Text(text = "Sunset: ${state.weather?.sunset}")
+    }
+
+    Spacer(modifier = Modifier.height(16.dp))
+    Button(
+        onClick = { onShowForecast() },
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        Text(text = "Show Forecast")
     }
 }

@@ -73,12 +73,14 @@ dependencies {
     ksp(libs.daggerHiltCompiler)
     implementation(libs.hiltNavigationCompose)
 
+    implementation(libs.serializationJson)
+
+
     // Coroutines
     implementation(libs.coroutines)
     implementation(libs.coroutinesCore)
     implementation(libs.coroutinesTest)
 
-    //acompanist permissions
     implementation(libs.accompanistPermissions)
 
 

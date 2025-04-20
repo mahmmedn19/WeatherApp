@@ -1,7 +1,3 @@
-/**
- * @author Mohamed Naser.
- */
-
 package com.project.forecast
 
 import androidx.compose.foundation.layout.*
@@ -18,7 +14,7 @@ import com.project.forecast.component.ForecastItem
 @Composable
 fun ForecastScreen(
     city: String,
-    viewModel: ForecastViewModel = hiltViewModel()
+    viewModel: ForecastViewModel
 ) {
     val state by viewModel.state.collectAsState()
 
