@@ -77,6 +77,7 @@ okhttpLoggingInterceptor = { module = "com.squareup.okhttp3:logging-interceptor"
 hiltNavigationCompose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
 daggerHiltAndroid = { module = "com.google.dagger:hilt-android", version.ref = "daggerHilt" }
 daggerHiltCompiler = { module = "com.google.dagger:hilt-compiler", version.ref = "daggerHilt" }
+dagger = { group = "com.google.dagger", name = "dagger", version.ref = "daggerHilt" }
 moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
 moshiAdapters = { module = "com.squareup.moshi:moshi-adapters", version.ref = "moshiAdapters" }
 moshiKotlin = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshiKotlin" }
