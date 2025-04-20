@@ -8,11 +8,10 @@
 
 ✅ Search and select any city  
 ✅ View current weather (temperature, condition, icon)  
-✅ See a 7-day forecast in a list  
+✅ See a 5-day forecast in a list  
 ✅ Last searched city auto-loaded on app reopen  
 ✅ Swipe-to-refresh support  
 ✅ Responsive and clean UI using Jetpack Compose  
-✅ Dark mode compatible  
 
 ---
 
@@ -20,7 +19,7 @@
 
 - **Kotlin + Jetpack Compose**
 - **MVVM (City Input, Current Weather)**  
-- **MVI (7-Day Forecast)**  
+- **MVI (5-Day Forecast)**  
 - **Clean Architecture (Presentation → Domain → Data)**  
 - **Retrofit + OkHttp + Gson** (network)
 - **Room** (local cache)
