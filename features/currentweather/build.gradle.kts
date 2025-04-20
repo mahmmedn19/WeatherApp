@@ -49,6 +49,10 @@ dependencies {
     implementation(libs.daggerHiltAndroid)
     ksp(libs.daggerHiltCompiler)
 
+    implementation(libs.coilCompose)
+    implementation(libs.coilGif)
+    implementation("androidx.compose.material:material:1.7.8") // أو
+    implementation("androidx.compose.material3:material3:1.3.2")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     testImplementation(libs.junit)

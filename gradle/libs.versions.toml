@@ -86,7 +86,7 @@ moshiKotlinCodegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", versi
 uiToolingPreview = { module = "androidx.compose.ui:ui-tooling-preview" }
 appUpdateKtx = { module = "com.google.android.play:app-update-ktx", version.ref = "appUpdateKtx" }
 blur = { module = "com.github.skydoves:cloudy", version.ref = "blur" }
-
+accompanist-swiperefresh = { module = "com.google.accompanist:accompanist-swiperefresh", version.ref = "accompanist" }
 coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
 coroutinesTest = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 coroutinesCore = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }

@@ -48,6 +48,9 @@ dependencies {
 
     implementation(libs.daggerHiltAndroid)
     ksp(libs.daggerHiltCompiler)
+    //coil
+    implementation(libs.coilCompose)
+    implementation(libs.coilGif)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
