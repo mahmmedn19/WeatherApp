@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.hiltAndroid)
     alias(libs.plugins.ksp)
+    id("org.jetbrains.kotlin.plugin.serialization") version "2.1.10"
 }
 
 android {
@@ -37,6 +38,7 @@ dependencies {
 
     implementation(libs.coroutinesCore)
     implementation(libs.coroutines)
+    implementation(libs.serializationJson)
 
     implementation(libs.retrofit)
     implementation(libs.retrofitConverterGson)
@@ -55,6 +57,10 @@ dependencies {
 
     implementation(libs.daggerHiltAndroid)
     ksp(libs.daggerHiltCompiler)
+
+    //datastore
+    implementation(libs.datastorePreferences)
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

@@ -1,63 +1,39 @@
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)
-    id("maven-publish")
+    kotlin("jvm") version "2.0.21"
+    `maven-publish`
 }
 
-android {
-    namespace = "com.project.weather_utils"
-    compileSdk = 35
+group = "com.project"
+version = "1.0.0"
 
-    defaultConfig {
-        minSdk = 24
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
-    }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
-    kotlinOptions {
-        jvmTarget = "17"
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
     }
 }
+
+kotlin {
+    jvmToolchain(17)
+}
+
 publishing {
     publications {
-        create<MavenPublication>("release") {
-            groupId = "com.project.weather"
+        create<MavenPublication>("weatherUtils") {
+            from(components["java"])
+            groupId = "com.project"
             artifactId = "weather-utils"
             version = "1.0.0"
-
-            afterEvaluate {
-                from(components["release"])
-            }
         }
     }
+
     repositories {
         maven {
-            name = "local"
-            url = uri("${System.getProperty("user.home")}/.m2/repository")
+            name = "Local"
+            url = uri(layout.buildDirectory.dir("maven-repo"))
         }
     }
 }
-
 dependencies {
-    implementation(platform(libs.androidx.compose.bom))
-    api(libs.composeUi)
-    api(libs.composeMaterial3)
-    api(libs.coilCompose)
-
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
+    testImplementation(kotlin("test"))
     testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
 }
