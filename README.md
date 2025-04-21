@@ -99,6 +99,23 @@ data class ForecastScreen(val city: String)
 ```
 
 ---
+## ⚙️ GitHub Actions CI/CD
+
+This project uses **GitHub Actions** for automated CI/CD to ensure code quality and streamline delivery.
+
+### ✅ What the Pipeline Does
+
+- ✅ Runs **Lint checks**
+- ✅ Executes **Unit tests**
+- ✅ Builds both **Debug and Release APKs**
+- ✅ Uploads APKs as **build artifacts**
+- ✅ Sends **Slack notifications** for success/failure (requires webhook)
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d1ccf018-8634-4b32-bcb7-049821249b6c" alt="GitHub Actions Build Preview" width="800"/>
+  <img src="https://github.com/user-attachments/assets/ce415a6e-e2a6-4661-b6e5-2d2483e79d10" alt="GitHub Actions Build Preview" width="800"/>
+</p>
+
 
 ## 🔐 Secrets
 
@@ -116,7 +133,7 @@ OPEN_WEATHER_API_KEY=your_api_key_here
 
 1. Clone the project:
    ```bash
-   git clone https://github.com/yourusername/WeatherNowAndLater.git
+   git clone https://github.com/mahmmedn19/WeatherNowAndLater.git
    cd WeatherNowAndLater
    ```
 
