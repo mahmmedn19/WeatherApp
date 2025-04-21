@@ -12,17 +12,17 @@ import retrofit2.http.Query
 
 interface WeatherApiService {
 
-    @GET("data/2.5/weather")
+    @GET("weather")
     suspend fun getCurrentWeather(
         @Query("q") city: String,
-        @Query("appid") apiKey: String = BuildConfig.OPEN_WEATHER_API_KEY
+        @Query("appid") apiKey: String = "99f6b894bf488e9df51eb930eb95ec96"
     ): Response<CurrentWeatherDto>
 
-    @GET("data/2.5/forecast")
+    @GET("forecast")
     suspend fun getFiveDayThreeHourForecast(
         @Query("q") city: String,
-        @Query("cnt") days: Int = 7,
-        @Query("appid") apiKey: String = BuildConfig.OPEN_WEATHER_API_KEY,
+        @Query("cnt") days: Int = 5,
+        @Query("appid") apiKey: String = "99f6b894bf488e9df51eb930eb95ec96",
         @Query("units") units: String = "metric"
     ): Response<ForecastResponseDto>
 }

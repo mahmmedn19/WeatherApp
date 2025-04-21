@@ -20,7 +20,7 @@ import com.project.forecast.ForecastViewModel
 fun SetupAppNavigation(navController: NavHostController = rememberNavController()) {
     NavHost(
         navController = navController,
-        startDestination = "CityInputScreen"
+        startDestination = Screen.CityInputScreen
     ) {
 
         composable<Screen.CityInputScreen> {
