@@ -39,7 +39,7 @@ class ForecastViewModel @Inject constructor(
                         it.copy(
                             forecasts = result.getOrThrow().map { forecast ->
                                 ForecastUiModel(
-                                    date = formatDateFromUnix(forecast.date.toLong()),
+                                    date = forecast.date,
                                     temperature = TemperatureFormatter.formatCelsius(forecast.avgTemp),
                                     condition = forecast.condition,
                                     iconUrl = forecast.icon
