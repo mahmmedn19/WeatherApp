@@ -13,6 +13,9 @@ material = "1.12.0"
 jetbrainsKotlinJvm = "2.0.21"
 daggerHilt = "2.55"
 materialIconsExtendedAndroid = "1.7.8"
+mockitoInline = "5.2.0"
+mockitoKotlin = "5.2.1"
+mockk = "1.13.8"
 moshi = "1.15.1"
 permissionx = "1.8.1"
 retrofit = "2.11.0"
@@ -36,6 +39,7 @@ appUpdateKtx = "2.1.0"
 blur = "0.2.4"
 ksp = "2.1.10-1.0.31"
 coroutines = "1.9.0"
+turbine = "1.0.0"
 
 
 [libraries]
@@ -57,6 +61,9 @@ composeUi = { module = "androidx.compose.ui:ui" }
 composeUiGraphics = { module = "androidx.compose.ui:ui-graphics" }
 composeMaterial3 = { module = "androidx.compose.material3:material3" }
 materialIconsExtendedAndroid = { module = "androidx.compose.material:material-icons-extended-android", version.ref = "materialIconsExtendedAndroid" }
+mockito-inline = { module = "org.mockito:mockito-inline", version.ref = "mockitoInline" }
+mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockitoKotlin" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 navigationCompose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
 permissionx = { module = "com.guolindev.permissionx:permissionx", version.ref = "permissionx" }
 roomRuntime = { module = "androidx.room:room-runtime", version.ref = "room" }
@@ -83,6 +90,7 @@ moshiAdapters = { module = "com.squareup.moshi:moshi-adapters", version.ref = "m
 moshiKotlin = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshiKotlin" }
 retrofitConverterMoshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofitConverterMoshi" }
 moshiKotlinCodegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshiKotlinCodegen" }
+turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
 uiToolingPreview = { module = "androidx.compose.ui:ui-tooling-preview" }
 appUpdateKtx = { module = "com.google.android.play:app-update-ktx", version.ref = "appUpdateKtx" }
 blur = { module = "com.github.skydoves:cloudy", version.ref = "blur" }

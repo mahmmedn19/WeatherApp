@@ -26,6 +26,10 @@ class CityInputViewModel @Inject constructor(
 
     fun submitCity() {
         val currentCity = _state.value.city.trim()
+        if (currentCity.isEmpty()) {
+            _state.update { it.copy(errorMessage = "Please enter a valid city name") }
+            return
+        }
         _state.update { it.copy(isLoading = true) }
         viewModelScope.launch {
             val result = getCurrentWeatherUseCase(currentCity)
