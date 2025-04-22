@@ -2,8 +2,9 @@ package com.project.features_cityinput
 
 data class CityInputState(
     val city: String = "",
+    val searchHistory: List<String> = emptyList(),
     val isLoading: Boolean = false,
-    val errorMessage: String? = null
+    val errorMessage: String? = null,
 ) {
     val isValid: Boolean
         get() = city.length >= 2

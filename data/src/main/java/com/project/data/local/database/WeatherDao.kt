@@ -7,7 +7,7 @@ import androidx.room.*
 
 @Dao
 interface WeatherDao {
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Upsert
     suspend fun insertOrUpdate(weather: WeatherEntity)
 
     @Query("SELECT * FROM city_weather WHERE cityName = :city LIMIT 1")
